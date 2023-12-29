@@ -19,4 +19,12 @@ public class ResourceManager : MonoBehaviour
         }
         return Object.Instantiate(prefab, parent);
     }
+
+    public void Destory(GameObject go)
+    {
+        if (go == null)
+            return;
+
+        Object.Destroy(go);
+    }
 }

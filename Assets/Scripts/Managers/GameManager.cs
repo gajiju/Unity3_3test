@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     static GameManager _instans = new GameManager(); // 독립성 보장
-    public static GameManager Instans() { Init();  return _instans; }
-    
+    ResourceManager _Resources = new ResourceManager();
+
+
+    public static GameManager Instans { get { Init(); return _instans; } }
+    public static ResourceManager Resource { get { return _instans._Resources; } }
 
 
     static void Init()
